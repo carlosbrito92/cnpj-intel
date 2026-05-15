@@ -1,0 +1,39 @@
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Outputs — nunca commitar relatórios gerados
+output/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# uv
+.uv/
+
+# Testes
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ruff
+.ruff_cache/
+
+# WeasyPrint / PDF temporários
+*.pdf
+tmp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Modo interno — nunca público
+INTERNAL.md
