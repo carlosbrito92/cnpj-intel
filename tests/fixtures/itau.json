@@ -1,0 +1,28 @@
+{
+  "cnpj": "60701190000104",
+  "razao_social": "ITAÚ UNIBANCO S.A.",
+  "nome_fantasia": "ITAÚ UNIBANCO",
+  "situacao_cadastral": "ATIVA",
+  "data_situacao_cadastral": "2005-11-01",
+  "natureza_juridica": "2046 - Sociedade Anônima Aberta",
+  "porte": "DEMAIS",
+  "capital_social": 97148296249.72,
+  "atividade_principal": [
+    {
+      "codigo": "6422-1/00",
+      "descricao": "Bancos múltiplos, com carteira comercial"
+    }
+  ],
+  "logradouro": "PRACA ALFREDO EGYDIO DE SOUZA ARANHA",
+  "numero": "100",
+  "municipio": "SAO PAULO",
+  "uf": "SP",
+  "cep": "04344902",
+  "_meta": {
+    "raw": "60.701.190/0001-04",
+    "limpo": "60701190000104",
+    "formatado": "60.701.190/0001-04",
+    "valido": true
+  },
+  "_fonte": "fixture"
+}

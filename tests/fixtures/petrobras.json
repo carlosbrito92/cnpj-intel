@@ -1,0 +1,28 @@
+{
+  "cnpj": "33000167000101",
+  "razao_social": "PETRÓLEO BRASILEIRO S.A. - PETROBRAS",
+  "nome_fantasia": "PETROBRAS",
+  "situacao_cadastral": "ATIVA",
+  "data_situacao_cadastral": "2005-11-01",
+  "natureza_juridica": "2038 - Sociedade de Economia Mista",
+  "porte": "DEMAIS",
+  "capital_social": 205431960490.52,
+  "atividade_principal": [
+    {
+      "codigo": "0600-0/01",
+      "descricao": "Extração de petróleo e gás natural"
+    }
+  ],
+  "logradouro": "AV REPUBLICA DO CHILE",
+  "numero": "65",
+  "municipio": "RIO DE JANEIRO",
+  "uf": "RJ",
+  "cep": "20031170",
+  "_meta": {
+    "raw": "33.000.167/0001-01",
+    "limpo": "33000167000101",
+    "formatado": "33.000.167/0001-01",
+    "valido": true
+  },
+  "_fonte": "fixture"
+}

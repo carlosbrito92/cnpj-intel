@@ -1,0 +1,28 @@
+{
+  "cnpj": "47960950000121",
+  "razao_social": "MAGAZINE LUIZA S.A.",
+  "nome_fantasia": "MAGAZINE LUIZA",
+  "situacao_cadastral": "ATIVA",
+  "data_situacao_cadastral": "2005-11-01",
+  "natureza_juridica": "2046 - Sociedade Anônima Aberta",
+  "porte": "DEMAIS",
+  "capital_social": 7060827732.72,
+  "atividade_principal": [
+    {
+      "codigo": "4753-9/00",
+      "descricao": "Comércio varejista especializado de eletrodomésticos"
+    }
+  ],
+  "logradouro": "RUA VOLUNTARIOS DA PATRIA",
+  "numero": "4100",
+  "municipio": "FRANCA",
+  "uf": "SP",
+  "cep": "14400000",
+  "_meta": {
+    "raw": "47.960.950/0001-21",
+    "limpo": "47960950000121",
+    "formatado": "47.960.950/0001-21",
+    "valido": true
+  },
+  "_fonte": "fixture"
+}

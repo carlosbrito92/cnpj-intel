@@ -23,8 +23,11 @@ cnpj-intel = "src.cli:app"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.uv]
-dev-dependencies = [
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[dependency-groups]
+dev = [
     "pytest>=8.0",
     "respx>=0.21",
     "pytest-asyncio>=0.23",
