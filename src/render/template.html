@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="capa">
+    <div class="capa-label">RELATÓRIO DE INTELIGÊNCIA EMPRESARIAL</div>
+    <h1 class="capa-cnpj">{{ cnpj }}</h1>
+    <h2 class="capa-razao">{{ razao_social }}</h2>
+    <div class="capa-meta">
+      <span>Gerado em {{ data_geracao }}</span>
+      <span>Fonte: dados públicos Receita Federal</span>
+    </div>
+  </div>
+
+  <div class="secao">
+    <h2 class="secao-titulo">1. Dados Cadastrais</h2>
+    <table class="tabela-dados">
+      <tr><th>CNPJ</th><td>{{ cnpj }}</td></tr>
+      <tr><th>Razão Social</th><td>{{ razao_social }}</td></tr>
+      <tr><th>Nome Fantasia</th><td>{{ nome_fantasia or '—' }}</td></tr>
+      <tr><th>Situação Cadastral</th>
+          <td class="situacao-{{ situacao_cadastral | lower }}">{{ situacao_cadastral }}</td></tr>
+      <tr><th>Natureza Jurídica</th><td>{{ natureza_juridica or '—' }}</td></tr>
+      <tr><th>Porte</th><td>{{ porte or '—' }}</td></tr>
+      <tr><th>Capital Social</th><td>{{ capital_social }}</td></tr>
+      <tr><th>Início de Atividade</th><td>{{ data_inicio_atividade or '—' }}</td></tr>
+      <tr><th>Município / UF</th><td>{{ municipio }} / {{ uf }}</td></tr>
+    </table>
+  </div>
+
+  <div class="secao">
+    <h2 class="secao-titulo">2. Atividade Principal</h2>
+    <table class="tabela-dados">
+      {% for ativ in atividades %}
+      <tr><th>{{ ativ.codigo }}</th><td>{{ ativ.descricao }}</td></tr>
+      {% else %}
+      <tr><td colspan="2">Não informada.</td></tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <div class="secao">
+    <h2 class="secao-titulo">3. Quadro Societário</h2>
+    <table class="tabela-dados">
+      <tr>
+        <th class="col-header">Nome</th>
+        <th class="col-header">Qualificação</th>
+        <th class="col-header">Tipo</th>
+      </tr>
+      {% for socio in socios %}
+      <tr>
+        <td>{{ socio.nome }}</td>
+        <td>{{ socio.qualificacao or '—' }}</td>
+        <td>{{ socio.tipo or '—' }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="3">Nenhum sócio informado.</td></tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <div class="secao">
+    <h2 class="secao-titulo">4. Análise de Red Flags</h2>
+    {% if flags.total == 0 %}
+    <p class="sem-flags">Nenhuma irregularidade detectada nas heurísticas automatizadas.</p>
+    {% else %}
+    <div class="resumo-flags">
+      <span class="badge alto">Alto: {{ flags.por_severidade.alto }}</span>
+      <span class="badge medio">Médio: {{ flags.por_severidade.medio }}</span>
+      <span class="badge baixo">Baixo: {{ flags.por_severidade.baixo }}</span>
+    </div>
+    <table class="tabela-dados">
+      <tr>
+        <th class="col-header">Código</th>
+        <th class="col-header">Severidade</th>
+        <th class="col-header">Descrição</th>
+      </tr>
+      {% for flag in flags.flags %}
+      <tr>
+        <td><code>{{ flag.codigo }}</code></td>
+        <td class="severidade-{{ flag.severidade }}">{{ flag.severidade | upper }}</td>
+        <td>{{ flag.descricao }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+  </div>
+
+  <div class="secao">
+    <h2 class="secao-titulo">5. Síntese Executiva</h2>
+    <div class="sintese">
+      {{ sintese | safe }}
+    </div>
+  </div>
+
+  <div class="rodape">
+    <p>Este relatório foi gerado automaticamente por <strong>cnpj-intel</strong> com base em dados públicos
+    da Receita Federal. Não substitui due diligence humana.</p>
+    <p>Gerado em {{ data_geracao }} · github.com/carlosbrito92/cnpj-intel</p>
+  </div>
+
+</body>
+</html>
